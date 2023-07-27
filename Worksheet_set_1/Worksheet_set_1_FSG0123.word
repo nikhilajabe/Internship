@@ -1,0 +1,160 @@
+Q1. What is the size of float and double in java?
+Ans: A. 32 and 64
+Q2. Automatic type conversion is possible in which of the possible cases?
+Ans: B. Int to long
+Q3.Find the output of the following code. int Integer = 24; char String = ‘I’;
+Ans: D. 24 I
+Q4.Find the output of the following program.
+public class Solution{
+public static void main(String[] args){
+short x = 10;
+x = x * 5;
+System.out.print(x); 
+}
+}
+Ans: C. Compile error
+
+Q5.Find the output of the following program.
+public class Solution{
+public static void main(String[] args){
+byte x = 127;
+x++;
+x++;
+System.out.print(x);
+}
+}
+Ans: A. -127
+
+Q6. Select the valid statement.
+Ans: B. char[] ch = new char[5]
+
+Q7. Find the output of the following program.
+public class Solution{
+   public static void main(String[] args){
+   int[] x = {120, 200, 016};
+   for(int i = 0; i < x.length; i++){
+   System.out.print(x[i] + “ “);
+   }
+   }
+}
+Ans: B. 120 200 14
+
+Q8.When an array is passed to a method, what does the method receive? A. The reference of the array
+
+Q9.Find the value of A[1] after execution of the following program.
+int[] A = {0,2,4,1,3};
+for(int i = 0; i < a.length; i++){
+a[i] = a[(a[i] + 3) % a.length];
+}
+Ans: B. 1
+
+Q10. When is the object created with a new keyword?
+ Ans:  A. At run time
+
+Q11. Identify the corrected definition of a package.
+Ans:  C. a package is a collection of classes and interfaces
+
+Q12.Identify the keyword among the following that makes a variable belong to a class,rather than being defined for each instance of the class.
+Ans:  B. static
+Q13.Identify what can directly access and change the value of the variable res.
+Package com.mypackage;
+Public class Solution{
+Private int res = 100;
+}
+Ans:  B. Only Solution class
+
+Q14.In which of the following is the toString() method defined?
+Ans:  A. java.lang.Object
+
+Q15.Identify the output of the following program.
+String str = “abcde”;
+System.out.println(str.substring(1, 3));
+Ans : B. bc
+
+Q16.Identify the output of the following program.
+String str = “Hellow”;
+System.out.println(str.indexOf(‘t)); Ans: D. -1
+
+Q17.
+Identify the output of the following program.
+Public class Test{
+Public static void main(String argos[]){
+String str1 = “one”;
+String str2 = “two”;
+System.out.println(str1.concat(str2));
+}
+}
+Ans: C. onetwo 
+
+
+Q18.
+How many objects will be created in the following?
+String a = new String(“FlipRobo”);
+String b = new String(“FlipRobo”);
+String c = “FlipRobo”;
+String d = “FlipRobo”; Ans:  B. 3
+
+Q19.Find the output of the following code.
+int ++a = 100;
+System.out.println(++a); 
+Ans: B. Compile error as ++a is not valid identifier
+
+Q20.Find the output of the following code.
+if(1 + 1 + 1 + 1 + 1 == 5){
+System.out.print(“TRUE”);
+}
+else{
+System.out.print(“FALSE”);
+}
+Ans:  A. TRUE
+
+Q21.Find the output of the following code.
+Public class Solution{
+Public static void main(String args[]){
+Int x = 5;
+x * = (3 + 7);
+System.out.println(x);
+Ans: A. 50 
+
+
+
+Q22.Identify the return type of a method that does not return any value.
+Ans: B. void 
+Q23.Output of Math.floor(3.6)?
+Ans: B. 3.0
+
+Q24. Identify the modifier which cannot be used for constructor.
+Ans: D. static 
+
+Q25. What are the variables declared in a class for the use of all methods of the class called? Ans: B. Instance variables 
+
+Q26.
+Find the output of the following code.
+Public class Solution{
+Public static void main(String args[]){
+Int i;
+for(i = 1; i < 6; i++){
+if(i > 3) continue;
+}
+System.out.println(i);
+}
+}
+Ans: D. 6 
+
+Q27. Identify the infinite loop.
+Ans: D. All of the above
+
+Q28.Exception created by try block is caught in which block
+Ans:  A. catch
+
+
+Q29.Which of the following exception is thrown when divided by zero statement is
+executed?
+Ans: C. ArithmeticException
+
+Q30.Where is System class defined?
+Ans: A. java.lang.package 
+  
+
+
+
