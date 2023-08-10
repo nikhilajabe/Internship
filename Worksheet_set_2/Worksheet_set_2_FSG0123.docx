@@ -1,1 +1,320 @@
+FULL STACK DEVELOPMENT – WORKSHEET 2
+
+Q1.Java method overloading implements the OOPS concept
+Ans:  C. Polymorphism
+
+Q2. Data members and member functions of a class are private by default.
+Ans:  A. True
+
+Q3.Which of the following functions can be inherited from the base class?
+Ans:  D. None
+
+Q4. Identify the feature, which is used to reduce the use of nested classes.
+Ans:  C. Inheritance
+
+Q5. Which concept of Java is achieved by combining methods and attributes into a class?
+Ans:  A. Encapsulation
+
+Q6.Which of the following declarations does not compile?
+Ans: A. double num1, int num2 = 0;
+
+Q7.Which of these interface must contain a unique element?
+Ans: A. Set
+
+
+
+Q8.Predict the output?
+package main;
+class T {
+int t = 20;
+}
+class Main {
+public static void main(String args[]) {
+T t1 = new T();
+System.out.println(t1.t);
+}
+}
+Ans: A. 20
+
+
+Q9. What is the output of the below Java program?
+//bingo.java file
+public class Hello
+{
+public static void main(String[] args)
+{
+System.out.println("BINGO");
+}
+}
+Ans:  D. Compile Error
+Explanation: because java file and class name are different. 
+
+
+Q10.What will be the output of the following Java program?
+class variable_scope
+{
+public static void main(String args[])
+{
+int x;
+x = 5;
+{
+int y = 6;
+System.out.print(x + " " + y);
+}
+System.out.println(x + " " + y);
+}
+}
+Ans:  A. Compilation Error
+Explanation: second print statement does not have access to Y. 
+
+Q11.What will be the output of the following Java code?
+class String_demo
+{
+public static void main(String args[])
+{
+char chars[] = {'a', 'b', 'c'};
+String s = new String(chars);
+System.out.println(s);
+}
+}
+Ans:  A. abc
+
+
+Q12. What will be the output of the following Java program?
+final class A
+{
+int i;
+}
+class B extends A
+{
+int j;
+System.out.println(j + " " + i);
+}
+class inheritance
+{
+public static void main(String args[])
+{
+B obj = new B();
+obj.display();
+}
+}
+Ans:  D. Compilation Error
+Explanation:  cannot inherit from final class, No method in class B to print the statement and no display method in class B.  
+
+
+Q13.What is output of following program
+public class Test
+{
+public int getData() //getdata() 1
+{
+return 0;
+}
+public long getData() //getdata 2
+{
+return 1;
+}
+public static void main(String[] args)
+{
+Test obj = new Test();
+System.out.println(obj.getData());
+}
+}
+Ans:  D. Compilation Error
+Explanation:  For method overloading, methods must have different signatures.
+
+
+Q14. What is the output of the following program?
+public class Test{
+static int start = 2;
+final int end;
+public Test(int x) {
+x = 4;
+end = x;
+}
+public void fly(int distance) {
+System.out.println(end-start+" ");
+System.out.println(distance);
+}
+public static void main(String []args){
+new Test(10).fly(5);
+}
+} Ans:  A. [2 5]
+
+
+Q15.What is the output of the following program?
+String john = "john";
+String jon = new String(john);
+System.out.println((john==jon) + " "+ (john.equals(jon)));
+Ans: C. false true
+
+
+Q16. Given that Student is a class, how many reference variables and objects are created
+by the following code?
+Student studentName, studentId;
+studentName = new Student();
+Student stud_class = new Student();
+Ans:  A. Three reference variables and two objects are created.
+Explanation:  The student Name, studentId, and stud_class are the three reference variables.
+studentName and stud_class are objects.
+
+
+Q17. Write a java program to check even or odd number
+import java.util.Scanner;
+public class EvenOdd{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number to check odd or even.");
+        int num=sc.nextInt();
+        if(num%2==0){
+            System.out.println(num  +" is a even number");
+        }else {
+            System.out.println(num + " is a odd number");
+        }
+    }
+}
+
+
+Q18. Write a java program to find average of two numbers
+import java.util.Scanner;
+public class Average{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter first number");
+        int num1=sc.nextInt();
+        System.out.println("Enter second number");
+        int num2=sc.nextInt();
+        int avg=(num1+num2)/2;
+        System.out.println("Average of this two number is "+ avg );
+    }
+}
+
+
+Q19. Write a java program to swap two numbers
+import java.util.Scanner;
+public class Swap{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter first number");
+        int num1=sc.nextInt();
+        System.out.println("Enter second number");
+        int num2=sc.nextInt();
+        int temp;
+        temp=num1;
+        num1=num2;
+        num2=temp;
+        System.out.println("Number after swapping "+ num1+" "+num2);
+    }
+}
+
+
+Q20. Write a java program to check whether a number is prime or not
+import java.util.Scanner;
+public class IsPrime{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num=sc.nextInt();  
+        boolean isPrime=false;
+        for (int i=2;i<=num/2;i++){
+            if(num%i==0){
+                isPrime=true; break;
+            }
+        }
+        if (isPrime){
+            System.out.println( num +" is not a prime number");
+        }else {
+            System.out.println(num +" is a prime number");
+        }
+    }
+}
+
+
+Q21. Write a java program to find table of n
+import java.util.Scanner;
+public class Table{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number to print table");
+        int num=sc.nextInt();
+        System.out.println("Multiplication table of "+ num+" is:");
+        for (int i=1;i<=10;i++){
+            System.out.println( num+" X "+i+ " = "+num*i );
+        }
+    }
+}
+
+
+Q22. Write a java program to find the largest of three numbers
+import java.util.Scanner;
+public class Test{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter three numbers");
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        int num3=sc.nextInt();
+        if (num1>=num2&&num1>=num3){
+            System.out.println("Largest of three number is "+ num1);
+        }else if (num2>=num1&&num2>=num3){
+            System.out.println("Largest of three number is "+ num2);
+        }else {
+            System.out.println("Largest of three number is "+ num3);
+        }
+    }
+}
+
+
+Q23. Write a java program to calculate Simple Interest
+import java.util.Scanner;
+public class SimpleInterest{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Principal :");
+        double principal=sc.nextDouble();
+        System.out.println("Enter the Rate of interest :");
+        double rate=sc.nextDouble();
+        System.out.println("Enter the Time period :");
+        double time=sc.nextDouble();
+        double simpleInterest=(principal*rate*time)/100;
+        System.out.println("Simple interest is Rs: "+ simpleInterest);
+    }
+}
+
+
+Q24. Write a java program to calculate Area and perimeter of Rectangle
+import java.util.Scanner;
+public class Test{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Length of rectangle :");
+        int length=sc.nextInt();
+        System.out.println("Enter the width of rectangle :");
+        int width=sc.nextInt();
+        int area=length*width;
+        int perimeter=2*(length+width);
+        System.out.println("Area of rectangle is :"+ area);
+        System.out.println("Perimeter of rectangle is :"+ perimeter);
+    }
+}
+
+
+Q25. Write a java program to check whether character is vowel or consonant
+import java.util.Scanner;
+public class VowelorNot{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the character");
+        char Char=sc.next().charAt(0);
+        char ch=Character.toUpperCase(Char);
+        if (ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
+            System.out.println("the character is vowel");
+        }else if (ch>='A'&&ch<='Z'){
+            System.out.println("the character is consonant");
+        }else {
+            System.out.println("not an alphabet");
+        }
+    }
+}
+
+
 
