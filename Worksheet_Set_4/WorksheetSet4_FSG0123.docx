@@ -1,0 +1,458 @@
+Q1.Write in brief about OOPS Concept in java with Examples. (In your own words)
+Ans: OOPS refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code. Objects are seen by the viewer or user, performing tasks assigned by you. Object-oriented programming in java aims to implement real-world entities like abstraction, inheritance, hiding, polymorphism etc. in programming. The main aim of OOP in java is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
+
+class Sum { //method overloading compile-time polymorphism(OOPS)
+    public int sum(int a, int b) {
+         return (a + b);
+     }
+     public double sum(double a, double b) {
+         return (a + b);
+     }
+     public int sum(int a, int b, int c) {
+         return (a + b + c);
+     }
+ }
+ class Test {
+    public static void main(String args[])
+    {
+        Sum s = new Sum();
+        System.out.println(s.sum(30, 40));
+        System.out.println(s.sum(15, 25, 20));
+        System.out.println(s.sum(15.55, 22.35));
+    }
+}
+
+
+Q2.Write simple programs(wherever applicable) for every example given in Answer 2. Multiple Choice Questions
+
+Q1. Which of the following is used to make an Abstract class?
+Ans:  A. Making at least one member function as pure virtual function
+
+Q2. Which of the following is true about interfaces in java.
+1) An interface can contain the following type of members.
+....public, static, final fields (i.e., constants)
+....default and static methods with bodies
+2) An instance of the interface can be created.
+3) A class can implement multiple interfaces.
+4) Many classes can implement the same interface. 
+Ans:  A. 1, 3 and 4
+
+
+Q3. When does method overloading is determined?
+Ans:  B. At compile time
+
+Q4.What is the number of parameters that a default constructor requires? 
+Ans:  A. 0 
+
+Q5.To access data members of a class, which of the following is used?
+Ans:  C. A and B both as required
+
+Q6.Objects are the variables of the type ____?
+Ans:  C. Class
+
+Q7.A non-member function cannot access which data of the class?
+Ans:  A. Private data 
+
+Q8. Predict the output of following Java program
+class Test {
+int i;
+}
+class Main {
+public static void main(String args[]) {
+Test t = new Test();
+System.out.println(t.i);
+}
+} 
+Ans:  B. 0
+
+
+Q9.Which of the following is/are true about packages in Java?
+1) Every class is part of some package.
+2) All classes in a file are part of the same package.
+3) If no package is specified, the classes in the file
+go into a special unnamed package
+4) If no package is specified, a new package is created with
+folder name of class and the class is put in this package
+Ans:  A. Only 1, 2 and 3 
+
+  
+Q10.Predict the Output of following Java Program.
+class Base {
+public void show() {
+System.out.println("Base::show() called");
+}
+}
+class Derived extends Base {
+public void show() {
+System.out.println("Derived::show() called");
+}
+}
+public class Main {
+public static void main(String[] args) {
+Base b = new Derived();;
+b.show();
+}
+} 
+Output: Derived::show() called
+Explaination:
+Because b is a reference of Base and refers to an object of Derived class.  Function in java are virtual by default, So the run time polymorphism happens and derived Show() is called.
+
+Q11. What is the output of the below Java program?
+class Base {
+final public void show() {
+System.out.println("Base::show() called");
+}
+}
+class Derived extends Base {
+public void show() {
+System.out.println("Derived::show() called");
+}
+}
+class Main {
+public static void main(String[] args) {
+Base b = new Derived();;
+b.show();
+}
+}
+Output:  Compile Error
+Explanation:
+Because overridden method is final, show() in Derived cannot override show() in Base
+
+
+Q12.Find output of the program.
+class Base {
+public static void show() {
+System.out.println("Base::show() called");
+}
+}
+class Derived extends Base {
+public static void show() {
+System.out.println("Derived::show() called");
+}
+}
+class Main {
+public static void main(String[] args) {
+Base b = new Derived();
+b.show();
+}
+}
+Output: Base::show() called
+Explaination:
+The function is static thus runtime polymorphism doesn’t happen.
+
+
+Q13.What is the output of the following program?
+class Derived {
+public void getDetails() {
+System.out.printf("Derived class ");
+}
+}
+public class Test extends Derived {
+public void getDetails() {
+System.out.printf("Test class ");
+super.getDetails();
+}
+public static void main(String[] args) {
+Derived obj = new Test();
+obj.getDetails();
+}
+}
+Output: Test class Derived class
+Exlaination: Here super keyword used, super keyword refers to superclass objects. Here It is used to call superclass methods.
+
+
+Q14. What is the output of the following program?
+class Derived {
+public void getDetails(String temp) {
+System.out.println("Derived class " + temp);
+}
+}
+public class Test extends Derived {
+public int getDetails(String temp)
+{
+System.out.println("Test class " + temp);
+return 0;
+}
+public static void main(String[] args)
+{
+Test obj = new Test();
+obj.getDetails("Name");
+}
+}
+Output: compilation error
+Explanation:
+In this program, overriding methods signatures are different. The overriding method must have same signature, which includes, the argument list and the return type
+
+
+Q15.What will be the output of the following Java program?
+class test
+{
+public static int y = 0;
+}
+class HasStatic
+{
+private static int x = 100;
+public static void main(String[] args)
+{
+HasStatic hs1 = new HasStatic();
+hs1.x++;
+HasStatic hs2 = new HasStatic();
+hs2.x++;
+hs1 = new HasStatic();
+hs1.x++;
+HasStatic.x++;
+System.out.println("Adding to 100, x = " + x);
+test t1 = new test();
+t1.y++;
+test t2 = new test();
+t2.y++;
+t1 = new test();
+t1.y++;
+System.out.print("Adding to 0, ");
+System.out.println("y = " + t1.y + " " + t2.y + " " + test.y);
+}
+} 
+Output: Adding to 100, x = 104
+Adding to 0, y = 3 3 3
+Explanation: 
+In this example, the properties shown are static. When a variable is declared as static, then a single copy of variable is created and shared among all objects at class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.  
+
+
+Q16.Predict the output
+class San
+{
+public void m1 (int i,float f)
+{
+System.out.println(" int float method");
+}
+public void m1(float f,int i);
+{
+System.out.println("float int method");
+}
+public static void main(String[]args)
+{
+San s=new San();
+s.m1(20,20);
+}
+}
+Output: compile error
+Explanation: One method expect int and float variable and another method expecting float and int variable.But while we are calling they passed to integer variable so its compile-time error. Because any error that occurred in method overloading is a compile-time error.
+
+  
+Q17.What is the output of the following program?
+public class Test
+{
+public static void main(String[] args)
+{
+int temp = null;
+Integer data = null;
+System.out.println(temp + " " + data);
+}
+} 
+Output: compile error
+Explanation: 
+temp is a primitive data type. Primitive data types cannot be assigned null values. 
+  
+
+Q18.Find output
+class Test {
+protected int x, y;
+}
+class Main {
+public static void main(String args[]) {
+Test t = new Test();
+System.out.println(t.x + " " + t.y);
+}
+}
+Output: 0 0
+Protected member is accessible in all classes of the same package and in inherited classes of other packages. Since Test and Main are in the same package, no access-related problems in the above program and default constructors initialize integral variables as 0.
+
+
+Q19.Find output
+// filename: Test2.java
+class Test1 {
+Test1(int x)
+{
+System.out.println("Constructor called " + x);
+}
+}
+class Test2 {
+Test1 t1 = new Test1(10);
+Test2(int i) { t1 = new Test1(i); }
+public static void main(String[] args)
+{
+Test2 t2 = new Test2(5);
+}
+}
+Output: Constructor called 10
+       Constructor called 5
+Explanation: First t2 object is instantiated in the main method. As the order of initialization of local variables comes first then the constructor, first the instance variable (t1), in the class Test2 is allocated to the memory. In this line a new Test1 object is created, the constructor is called in class Test1 and ‘Constructor called 10’ is printed. Next, the constructor of Test2 is called and again a new object of the class Test1 is created and ‘Constructor called 5’ is printed.
+
+
+Q20.What will be the output of the following Java program?
+class Main
+{
+public static void main(String[] args)
+{
+int []x[] = {{1,2}, {3,4,5}, {6,7,8,9}};
+int [][]y = x;
+System.out.println(y[2][1]);
+}
+} 
+Output: 7
+Explanation: here two-dimensional arrays created. And we are accessing 1st index value of second array of the list.
+
+
+Q21.What will be the output of the following Java program?
+class A
+{
+int i;
+public void display()
+{
+System.out.println(i);
+}
+}
+class B extends A
+{
+int j;
+public void display()
+{
+System.out.println(j);
+}
+}
+class Dynamic_dispatch
+{
+public static void main(String args[])
+{
+B obj2 = new B();
+obj2.i = 1;
+obj2.j = 2;
+A r;
+r = obj2;
+r.display();
+}
+}
+Output: 2
+Explanation:
+Class A & class B both contain display() method, class B inherits class A, here display() method is called by object of class B (r=obj2), thus display() method of class B is executed.
+
+
+Q22. What will be the output of the following Java code?
+class A
+{
+int i;
+void display()
+{
+System.out.println(i);
+}
+}
+class B extends A
+{
+int j;
+void display()
+{
+System.out.println(j);
+}
+}
+class method_overriding
+{
+public static void main(String args[])
+{
+B obj = new B();
+obj.i=1;
+obj.j=2;
+obj.display();
+}
+} 
+Output: 2
+Explanation: 
+Class A & class B both contain display() method, class B inherits class A, here display() method is called by object of class B, thus display() method of class B is executed.
+
+
+Q23.What will be the output of the following Java code?
+class A
+{
+public int i;
+protected int j;
+}
+class B extends A
+{
+int j;
+void display()
+{
+super.j = 3;
+System.out.println(i + " " + j);
+}
+}
+class Output
+{
+public static void main(String args[])
+{
+B obj = new B();
+obj.i=1;
+obj.j=2;
+obj.display();
+}
+} 
+Output:  1 2
+Explanation: 
+Both class have member with same name that is j. Member of class B will be called by default if no specifier and super keyword is used. Hence i contain1 and j contain 2 thus output is 1 2.
+
+
+Q24.What will be the output of the following Java program?
+class A
+{
+public int i;
+public int j;
+A()
+{
+i = 1;
+j = 2;
+}
+}
+class B extends A
+{
+int a;
+B()
+{
+super();
+}
+}
+class super_use
+{
+public static void main(String args[])
+{
+B obj = new B();
+System.out.println(obj.i + " " + obj.j)
+}
+} 
+Output: 1 2 
+Explanation: 
+Super keyword is used to call constructor of class A by constructor of class B. Constructor of A initializes i and  j to 1 and 2 respectively.
+
+
+Q 25. Find the output of the following program.
+class Test
+{
+int a = 1;
+int b = 2;
+Test func(Test obj)
+{
+Test obj3 = new Test();
+obj3 = obj;
+obj3.a = obj.a++ + ++obj.b;
+obj.b = obj.b;
+return obj3;
+}
+public static void main(String[] args)
+{
+Test obj1 = new Test();
+Test obj2 = obj1.func(obj1);
+System.out.println("obj1.a = " + obj1.a + " obj1.b = " + obj1.b);
+System.out.println("obj2.a = " + obj2.a + " obj1.b = " + obj2.b);
+}
+}
+Output: 
+obj1.a = 4 obj1.b = 3
+obj2.a = 4 obj1.b = 3
+Explanation: obj1 and obj2 refer to same memory address.
